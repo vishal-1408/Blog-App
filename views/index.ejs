@@ -1,0 +1,35 @@
+<%- include("partials/header") %>
+
+
+<div class="ui main text container" id="cont">
+      <div class="ui huge header">Blogs</div>
+      <div class="ui top attached segment">
+        <div class="ui divided items">
+          <% blogs.forEach(function(a){ %>
+            <div class="item">
+              <div class="image">
+                  <img src="<%=a.image%>">
+              </div>
+              <div class="content">
+                  <a href="/blog/<%=a.id%>" class="header"><%=a.title%> </a>
+                  <div class="meta">
+                    <span><%=a.date%></span>
+                  </div>
+                  <div class="description">
+                    <p><%-a.body.substring(0,100)%>....</p>
+                  </div>
+                  <div class="extra">
+                      <a class="ui button big blue basic" href="/blog/<%=a.id%>">Show More</a>
+                  </div>
+              </div>
+
+
+
+            </div>
+          <%});%>
+        </div>
+
+      </div>
+</div>
+
+<%- include("partials/footer") %>
